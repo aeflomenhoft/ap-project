@@ -1,4 +1,38 @@
-let generation = game.askForNumber("Choose a decade or generation", 4)
+function checkYear (input2: number) {
+    if (input2 < 1600) {
+        game.splash("ERROR!!! this interface does not accept this year. please choose a year from 1600-2022!")
+    } else if (input2 <= 1699) {
+        game.splash("Your baby name is " + _1600list[randint(0, _1600list.length - 1)] + "!")
+    } else if (input2 <= 1799) {
+        game.splash("Your baby name is " + _1700list[randint(0, _1700list.length - 1)] + "!")
+    } else if (input2 <= 1899) {
+        game.splash("Your baby name is " + _1800list[randint(0, _1800list.length - 1)] + "!")
+    } else if (input2 <= 1979) {
+        game.splash("Your baby name is " + _1900list[randint(0, _1900list.length - 1)] + "!")
+    } else if (input2 <= 1989) {
+        game.splash("Your baby name is " + _1980list[randint(0, _1980list.length - 1)] + "!")
+    } else if (input2 <= 1999) {
+        game.splash("Your baby name is " + _1990list[randint(0, _1990list.length - 1)] + "!")
+    } else if (input2 <= 2009) {
+        game.splash("Your baby name is " + _2000list[randint(0, _2000list.length - 1)] + "!")
+    } else if (input2 <= 2019) {
+        game.splash("Your baby name is " + _2010list[randint(0, _2010list.length - 1)] + "!")
+    } else if (input2 <= 2022) {
+        game.splash("Your baby name is " + _2020list[randint(0, _2020list.length - 1)] + "!")
+    } else {
+        game.splash("ERROR!!! this interface does not accept this year. please choose a year from 1600-2022!")
+    }
+}
+let year = 0
+let _2020list: string[] = []
+let _2010list: string[] = []
+let _2000list: string[] = []
+let _1990list: string[] = []
+let _1980list: string[] = []
+let _1900list: string[] = []
+let _1800list: string[] = []
+let _1700list: string[] = []
+let _1600list: string[] = []
 scene.setBackgroundImage(img`
     dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
     dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
@@ -121,24 +155,120 @@ scene.setBackgroundImage(img`
     dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
     dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
     `)
-if (game.ask("1600")) {
-    game.splash("henry, james, edward, george, nicholas, elizabeth, jane, alice, margaret, catherine ")
-} else if (game.ask("1700")) {
-    game.splash("john, mary, william, ann, sarah, thomas, richard, ellen, walter, edith")
-} else if (game.ask("1800")) {
-    game.splash(" rufus, pearl, alfred, lulu, earnest, essie, sylvester, flossie, virgil, cornelia")
-} else if (game.ask("1900")) {
-    game.splash(" blanche, otis, eunice, wallace, henrietta, rudolph, victoria, edmund, frieda, aaron")
-} else if (game.ask("1980")) {
-    game.splash(" christopher, david, joseph, jason, justin, heather, nicole, tiffany, jessica, jennifer, ashley")
-} else if (game.ask("1990")) {
-    game.splash("corey, brittney, brett, bianca, casey, autumn, drew, lydia, ruben, paige ")
-} else if (game.ask("2000")) {
-    game.splash(" jacob, emily, michael, madison, joshua, emma, matthew, olivia, daniel, hannah ")
-} else if (game.ask("2010")) {
-    game.splash(" jayden, ethan, alexander, aiden, anthony, isabella, sophia, ava, addison, ella")
-} else if (game.ask("2020")) {
-    game.splash("liam, noah, elijah, oliver, benjamin, harper, mia, charlotte,aurora , amelia, luna")
-} else {
-    game.splash("pick another generation/decade!")
-}
+game.splash("welcome to baby name generator!")
+game.splash("Choose a birth year to be provided with name options from that time.")
+game.splash("please choose a year from 1600-2022!")
+forever(function () {
+    year = game.askForNumber("choose a year!", 4)
+    _1600list = [
+    "Henry",
+    "James",
+    "Edward",
+    "George",
+    "Nicholas",
+    "Elizabeth",
+    "Jane",
+    "Alice",
+    "Margaret",
+    "Catherine"
+    ]
+    _1700list = [
+    "John",
+    "Mary",
+    "William",
+    "Ann",
+    "Sarah",
+    "Thomas",
+    "Richard",
+    "Ellen",
+    "Walter",
+    "Edith"
+    ]
+    _1800list = [
+    "rufus",
+    "pearl",
+    "alfred",
+    "lulu",
+    "earnest",
+    "essie",
+    "sylvester",
+    "flossie",
+    "virgil",
+    "cornelia"
+    ]
+    _1900list = [
+    "blanche",
+    "otis",
+    "eunice",
+    "wallace",
+    "henrietta",
+    "rudolph",
+    "victoria",
+    "edmund",
+    "frieda",
+    "aaron"
+    ]
+    _1980list = [
+    "Christopher",
+    "David",
+    "Joseph",
+    "Jason",
+    "Justin",
+    "Heather",
+    "Nicole",
+    "Tiffany",
+    "Jessica",
+    "Jennifer",
+    "Ashley"
+    ]
+    _1990list = [
+    "Corey",
+    "Brittney",
+    "brett",
+    "Bianca",
+    "Casey",
+    "autumn",
+    "drew",
+    "Lydia",
+    "Ruben",
+    "Paige"
+    ]
+    _2000list = [
+    "Jacob",
+    "Emily",
+    "Michael",
+    "Madison",
+    "Joshua",
+    "Emma",
+    "Matthew",
+    "Olivia",
+    "Daniel",
+    "Hannah"
+    ]
+    _2010list = [
+    "Jayden",
+    "Ethan",
+    "Alexander",
+    "Aiden",
+    "Anthony",
+    "Isabella",
+    "Sophia",
+    "ava",
+    "Addison",
+    "Ella"
+    ]
+    _2020list = [
+    "Liam",
+    "Noah",
+    "Elijah",
+    "Oliver",
+    "Benjamin",
+    "harper",
+    "mia",
+    "charlotte",
+    "aurora",
+    "amelia",
+    "luna"
+    ]
+    checkYear(year)
+})
